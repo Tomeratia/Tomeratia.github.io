@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tomer Atia - Portfolio</title>
+  <meta name="description" content="Personal portfolio of Tomer Atia - AI, Deep Learning, Computer Vision, NLP." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#home">Tomer Atia</a>
+
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#contact">Get In Touch</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Computer Science Student (HIT)</p>
+          <h1>AI | Deep Learning | Computer Vision | NLP</h1>
+          <p class="lead">
+            I build end-to-end AI projects with a focus on robustness, real-world constraints, and clean reproducible repos.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">See Projects</a>
+            <a class="btn btn-ghost" id="linkedinBtn" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-ghost" id="githubBtn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+
+          <div class="mini">
+            <a class="mini-item" id="emailText" href="#">tomeratia44@gmail.com</a>
+            <span class="mini-dot">•</span>
+            <span class="mini-item">Israel</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img class="profile-img" src="assets/profile.jpg" alt="Profile photo" />
+          <div class="hero-card-body">
+            <div class="hero-card-title">Quick Links</div>
+            <div class="hero-card-links">
+              <a id="emailLink" href="#">Email</a>
+              <a id="linkedinLink" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a id="cvLink" href="#" target="_blank" rel="noreferrer">CV</a>
+            </div>
+            <div class="hint">Replace CV link in <code>script.js</code> if you want.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p class="section-lead">
+          Third-year Computer Science student focused on Deep Learning projects in Computer Vision and NLP.
+          I like building practical pipelines: data generation, training, evaluation, and clear repo structure.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Core Topics</h3>
+            <div class="tags">
+              <span class="tag">Synthetic Data</span>
+              <span class="tag">Detection</span>
+              <span class="tag">Segmentation</span>
+              <span class="tag">Transformers</span>
+              <span class="tag">Robustness</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Tools</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">Ultralytics (YOLO)</span>
+              <span class="tag">Hugging Face</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Projects</h2>
+            <p class="section-lead">Selected projects with clear goals and practical pipelines.</p>
+          </div>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <img src="assets/stormvision.jpg" alt="StormVision preview" />
+            <div class="project-body">
+              <h3>StormVision</h3>
+              <p>
+                Maritime object detection in stormy conditions using synthetic data augmentation (diffusion + depth + segmentation).
+              </p>
+              <ul>
+                <li>Synthetic storm generation for robustness</li>
+                <li>Detection training and evaluation (YOLO)</li>
+                <li>Focus on domain shift and harsh conditions</li>
+              </ul>
+              <a class="btn btn-primary" href="https://github.com/Tomeratia/StormVision" target="_blank" rel="noreferrer">View Project</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <img src="assets/seaalert.jpg" alt="SeaAlert preview" />
+            <div class="project-body">
+              <h3>SeaAlert</h3>
+              <p>
+                Classifies maritime radio calls into severity levels and extracts actionable info from noisy transcripts.
+              </p>
+              <ul>
+                <li>Text generation + ASR noise simulation pipeline</li>
+                <li>Transformer models for classification</li>
+                <li>Information extraction from real-world phrasing</li>
+              </ul>
+              <a class="btn btn-primary" href="https://github.com/Tomeratia/SeaAlert" target="_blank" rel="noreferrer">View Project</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <img src="assets/cornealseg.jpg" alt="CornealSeg preview" />
+            <div class="project-body">
+              <h3>CornealSeg</h3>
+              <p>
+                Corneal ulcer segmentation using a U-Net style architecture with transfer learning and ROI masking.
+              </p>
+              <ul>
+                <li>Medical imaging segmentation</li>
+                <li>ROI masking as anatomical prior</li>
+                <li>Dice/IoU oriented evaluation</li>
+              </ul>
+              <a class="btn btn-primary" href="https://github.com/Tomeratia/CornealSeg" target="_blank" rel="noreferrer">View Project</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="hint">
+          Replace project images in <code>assets/</code> anytime (same filenames).
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Get In Touch</h2>
+        <p class="section-lead">
+          This form opens your email app (no backend needed).
+        </p>
+
+        <form class="form" id="contactForm">
+          <label>
+            Name
+            <input type="text" id="name" placeholder="Your name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" id="email" placeholder="your@email.com" required>
+          </label>
+          <label class="full">
+            Message
+            <textarea id="message" rows="5" placeholder="Write your message" required></textarea>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Send</button>
+
+          <div class="contact-footer">
+            <a id="emailFooter" href="#">tomeratia44@gmail.com</a>
+            <span class="mini-dot">•</span>
+            <a id="linkedinFooter" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            <span class="mini-dot">•</span>
+            <span>Israel</span>
+          </div>
+        </form>
+
+        <p class="hint">
+          Want a form that sends without opening email? Use Formspree (tell me and I will wire it).
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Tomer Atia</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
