@@ -1,61 +1,32 @@
-const LINKS = {
-  cv: "", // optional: add a CV PDF URL here
-  linkedin: "https://www.linkedin.com/in/tomer-atia",
-  github: "https://github.com/Tomeratia",
-  email: "tomeratia44@gmail.com"
-};
-
-function setLink(id, url){
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.href = url;
-  if (url.startsWith("http")) {
-    el.target = "_blank";
-    el.rel = "noreferrer";
-  }
-}
-
-function setMailto(id, email){
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.textContent = email;
-  el.href = `mailto:${email}`;
-}
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-setLink("linkedinBtn", LINKS.linkedin);
-setLink("linkedinLink", LINKS.linkedin);
-setLink("linkedinFooter", LINKS.linkedin);
-
-setLink("githubBtn", LINKS.github);
-
-setMailto("emailText", LINKS.email);
-setMailto("emailLink", LINKS.email);
-setMailto("emailFooter", LINKS.email);
-
-if (LINKS.cv && LINKS.cv.trim().length > 0) {
-  setLink("cvLink", LINKS.cv);
-} else {
-  const cv = document.getElementById("cvLink");
-  if (cv) {
-    cv.href = "#";
-    cv.addEventListener("click", (e) => e.preventDefault());
-    cv.title = "Add your CV link in script.js";
-  }
-}
-
-const form = document.getElementById("contactForm");
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const from = document.getElementById("email").value.trim();
-    const msg = document.getElementById("message").value.trim();
-
-    const subject = encodeURIComponent(`Portfolio message from ${name || "Someone"}`);
-    const body = encodeURIComponent(`From: ${name}\\nEmail: ${from}\\n\\n${msg}`);
-
-    window.location.href = `mailto:${LINKS.email}?subject=${subject}&body=${body}`;
+// Bootstrap form validation + UX
+(() => {
+  'use strict';
+  const forms = document.querySelectorAll('.needs-validation');
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        const firstInvalid = form.querySelector(':invalid');
+        if (firstInvalid) firstInvalid.focus({ preventScroll: true });
+      }
+      form.classList.add('was-validated');
+    }, false);
   });
-}
+})();
+
+// הדגשת קישור פעיל בניווט בעת גלילה
+(function activeNavOnScroll(){
+  const links = document.querySelectorAll('.navbar .nav-link[href^="#"]');
+  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if (!sections.length) return;
+
+  const onScroll = () => {
+    const pos = window.scrollY + 120;
+    let current = sections[0].id;
+    for (const sec of sections) if (pos >= sec.offsetTop) current = sec.id;
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${current}`));
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('load', onScroll);
+})();
