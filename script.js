@@ -19,7 +19,7 @@
 (function typingEffect() {
   const el = document.getElementById('typing-text');
   if (!el) return;
-  const text = 'Computer Science Student';
+  const text = 'Deep Learning | Computer Vision | Gen AI | NLP';
   let i = 0;
   function type() {
     if (i <= text.length) {
@@ -47,6 +47,17 @@
   }, { threshold: 0.12 });
 
   targets.forEach(el => observer.observe(el));
+})();
+
+// כותרת דינמית לפי טאב פעיל בפרויקטים
+(function projectsHeading() {
+  const heading = document.getElementById('projects-heading');
+  if (!heading) return;
+  const labels = { 'research': 'Research', 'applied': 'Applied Research Projects' };
+  document.getElementById('projectsTab')?.addEventListener('shown.bs.tab', e => {
+    const id = e.target.getAttribute('data-bs-target')?.replace('#', '');
+    if (id && labels[id]) heading.textContent = labels[id];
+  });
 })();
 
 // הדגשת קישור פעיל בניווט בעת גלילה
