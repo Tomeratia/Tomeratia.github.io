@@ -119,6 +119,14 @@ footer{ background:var(--bg); color:var(--muted); }
 
 /* (ביטלנו את הקו המפריד) */
 
+/* ===== Hamburger button ===== */
+.navbar-toggler {
+  border: 2px solid #212529 !important;
+  border-radius: 8px;
+  margin-right: 0;
+  margin-left: auto;
+}
+
 /* ===== Typing cursor ===== */
 .typing-cursor {
   display: inline-block;
