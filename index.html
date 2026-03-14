@@ -12,29 +12,30 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<nav class="navbar navbar-light bg-white shadow-sm fixed-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#home">Tomer Atia</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navOffcanvas" aria-controls="navOffcanvas" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div id="nav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#research">Research</a></li>
-            <li><a class="dropdown-item" href="#applied">Applied Research</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
   </div>
 </nav>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas" aria-labelledby="navOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="navOffcanvasLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav flex-column gap-2">
+      <li class="nav-item"><a class="nav-link fs-5" href="#home" data-bs-dismiss="offcanvas">Home</a></li>
+      <li class="nav-item"><a class="nav-link fs-5" href="#about" data-bs-dismiss="offcanvas">About</a></li>
+      <li class="nav-item"><a class="nav-link fs-5" href="#research" data-bs-dismiss="offcanvas">Research</a></li>
+      <li class="nav-item"><a class="nav-link fs-5" href="#applied" data-bs-dismiss="offcanvas">Applied Research Projects</a></li>
+      <li class="nav-item"><a class="nav-link fs-5" href="#contact" data-bs-dismiss="offcanvas">Contact</a></li>
+    </ul>
+  </div>
+</div>
 
 <header id="home" class="py-5 bg-alt hero">
   <div class="container py-5">
