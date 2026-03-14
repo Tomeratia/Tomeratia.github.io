@@ -88,6 +88,27 @@
   observer.observe(el);
 })();
 
+// סגירת offcanvas לפני ניווט לעוגן
+(function offcanvasNav() {
+  const offcanvasEl = document.getElementById('navOffcanvas');
+  if (!offcanvasEl) return;
+  offcanvasEl.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+      if (bsOffcanvas) {
+        offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }, { once: true });
+        bsOffcanvas.hide();
+      } else {
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
 // הדגשת קישור פעיל בניווט בעת גלילה
 (function activeNavOnScroll(){
   const links = document.querySelectorAll('.navbar .nav-link[href^="#"]');
