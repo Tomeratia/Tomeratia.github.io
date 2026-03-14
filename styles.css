@@ -119,6 +119,17 @@ footer{ background:var(--bg); color:var(--muted); }
 
 /* (ביטלנו את הקו המפריד) */
 
+/* ===== Offcanvas nav links hover ===== */
+.offcanvas-body .nav-link {
+  color: var(--text);
+  transition: color .2s, padding-left .2s;
+}
+.offcanvas-body .nav-link:hover {
+  color: var(--primary);
+  padding-left: 8px;
+  font-weight: 600;
+}
+
 /* ===== Hamburger button ===== */
 .navbar-toggler {
   border: 2px solid var(--card-border) !important;
