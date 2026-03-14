@@ -15,6 +15,40 @@
   });
 })();
 
+// Typing effect בכותרת ה-Hero
+(function typingEffect() {
+  const el = document.getElementById('typing-text');
+  if (!el) return;
+  const text = 'Computer Science Student';
+  let i = 0;
+  function type() {
+    if (i <= text.length) {
+      el.textContent = text.slice(0, i++);
+      setTimeout(type, 70);
+    }
+  }
+  window.addEventListener('load', type);
+})();
+
+// Scroll Reveal — סקשנים וכרטיסים נכנסים בגלילה
+(function scrollReveal() {
+  const targets = document.querySelectorAll(
+    'section > .container, .card, .hero .col-lg-7, .hero .col-lg-5'
+  );
+  targets.forEach(el => el.classList.add('reveal'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  targets.forEach(el => observer.observe(el));
+})();
+
 // הדגשת קישור פעיל בניווט בעת גלילה
 (function activeNavOnScroll(){
   const links = document.querySelectorAll('.navbar .nav-link[href^="#"]');

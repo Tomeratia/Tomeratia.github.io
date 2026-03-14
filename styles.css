@@ -118,3 +118,26 @@ footer{ background:var(--bg); color:var(--muted); }
 }
 
 /* (ביטלנו את הקו המפריד) */
+
+/* ===== Typing cursor ===== */
+.typing-cursor {
+  display: inline-block;
+  font-weight: 300;
+  color: var(--primary);
+  animation: blink .7s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ===== Scroll Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

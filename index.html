@@ -34,7 +34,7 @@
   <div class="container py-5">
     <div class="row align-items-center gy-4">
       <div class="col-lg-7">
-        <h1 class="display-5 fw-bold">Computer Science Student</h1>
+        <h1 class="display-5 fw-bold"><span id="typing-text"></span><span class="typing-cursor">|</span></h1>
         <p class="lead mb-4">Deep Learning | Computer Vision | Gen AI | NLP</p>
         <a href="#contact" class="btn btn-primary btn-lg">Get In Touch</a>
       </div>
@@ -86,15 +86,21 @@
 
     <ul class="nav project-switch nav-pills justify-content-start gap-2" id="projectsTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal"
-                type="button" role="tab" aria-controls="personal" aria-selected="true">
-          <i class="bi bi-person-circle me-2"></i> Projects
+        <button class="nav-link active" id="research-tab" data-bs-toggle="tab" data-bs-target="#research"
+                type="button" role="tab" aria-controls="research" aria-selected="true">
+          <i class="bi bi-journal-text me-2"></i> Research
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="applied-tab" data-bs-toggle="tab" data-bs-target="#applied"
+                type="button" role="tab" aria-controls="applied" aria-selected="false">
+          <i class="bi bi-cpu me-2"></i> Applied Research Projects
         </button>
       </li>
     </ul>
 
     <div class="tab-content mt-4" id="projectsTabContent">
-      <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+      <div class="tab-pane fade show active" id="research" role="tabpanel" aria-labelledby="research-tab">
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm">
@@ -120,6 +126,10 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="applied" role="tabpanel" aria-labelledby="applied-tab">
+        <div class="row g-4">
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm">
               <img src="assets/cornealseg.jpg" class="card-img-top project-card-image" alt="CornealSeg">
