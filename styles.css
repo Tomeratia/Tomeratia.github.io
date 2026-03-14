@@ -121,10 +121,14 @@ footer{ background:var(--bg); color:var(--muted); }
 
 /* ===== Hamburger button ===== */
 .navbar-toggler {
-  border: 2px solid #212529 !important;
+  border: 2px solid var(--card-border) !important;
   border-radius: 8px;
   margin-right: 0;
-  margin-left: auto;
+  transition: border-color .2s;
+}
+.navbar-toggler:hover, .navbar-toggler:focus {
+  border-color: #212529 !important;
+  box-shadow: none;
 }
 
 /* ===== Typing cursor ===== */
