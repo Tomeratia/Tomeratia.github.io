@@ -187,6 +187,15 @@ section, header, h2[id] {
   border-color: #212529 !important;
   box-shadow: none;
 }
+[data-theme="dark"] .navbar-toggler {
+  border-color: #fff !important;
+}
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
+}
+[data-theme="dark"] .navbar-toggler:hover, [data-theme="dark"] .navbar-toggler:focus {
+  border-color: #fff !important;
+}
 
 /* ===== Typing cursor ===== */
 .typing-cursor {
