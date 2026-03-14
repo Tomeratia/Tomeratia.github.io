@@ -49,15 +49,40 @@
   targets.forEach(el => observer.observe(el));
 })();
 
-// כותרת דינמית לפי טאב פעיל בפרויקטים
-(function projectsHeading() {
-  const heading = document.getElementById('projects-heading');
-  if (!heading) return;
-  const labels = { 'research': 'Research', 'applied': 'Applied Research Projects' };
-  document.getElementById('projectsTab')?.addEventListener('shown.bs.tab', e => {
-    const id = e.target.getAttribute('data-bs-target')?.replace('#', '');
-    if (id && labels[id]) heading.textContent = labels[id];
-  });
+// Typing effect על פסקת About כשנכנסים לסקשן
+(function aboutTyping() {
+  const el = document.getElementById('about-typing-text');
+  if (!el) return;
+  const parts = [
+    `I'm a Computer Science student at the Holon Institute of Technology (HIT), holding a `,
+    { bold: 'GPA of 95' },
+    `, with a strong focus on Deep Learning, particularly in Computer Vision, NLP, and Generative AI.\n\nI'm passionate about building end-to-end systems — from synthetic data generation and NLP classification pipelines to training precise medical segmentation models.\n\nMy projects involve practical applications of these technologies, such as leveraging Generative models for data augmentation (solving data scarcity) and developing robust architectures for real-world constraints.`
+  ];
+
+  // בנה מחרוזת פשוטה לצורך ה-typing, ואחרי כן החלף bold
+  const fullText = parts.map(p => typeof p === 'string' ? p : p.bold).join('');
+  const boldWord = parts[1].bold;
+
+  let started = false;
+  function startTyping() {
+    if (started) return;
+    started = true;
+    let i = 0;
+    function type() {
+      if (i <= fullText.length) {
+        const current = fullText.slice(0, i++);
+        const html = current.replace(boldWord, `<strong class="text-dark">${boldWord}</strong>`);
+        el.innerHTML = html.replace(/\n/g, '<br>') + (i <= fullText.length ? '<span class="typing-cursor">|</span>' : '');
+        setTimeout(type, 22);
+      }
+    }
+    type();
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { startTyping(); observer.disconnect(); }
+  }, { threshold: 0.3 });
+  observer.observe(el);
 })();
 
 // הדגשת קישור פעיל בניווט בעת גלילה
