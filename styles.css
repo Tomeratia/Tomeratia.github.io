@@ -23,6 +23,9 @@
 [data-theme="dark"] .bg-light { background-color: #181f2e !important; }
 [data-theme="dark"] .form-control { background:var(--card-bg); color:var(--text); border-color:var(--card-border); }
 [data-theme="dark"] .form-control::placeholder { color: var(--muted); }
+[data-theme="dark"] .card { background:var(--card-bg); border-color:var(--card-border); }
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .card-text { color: var(--text); }
 
 html{ scroll-behavior:smooth; }
 body{
