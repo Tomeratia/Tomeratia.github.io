@@ -119,6 +119,11 @@ footer{ background:var(--bg); color:var(--muted); }
 
 /* (ביטלנו את הקו המפריד) */
 
+/* ===== Scroll offset for fixed navbar ===== */
+section, header, h2[id] {
+  scroll-margin-top: 80px;
+}
+
 /* ===== Offcanvas nav links hover ===== */
 .offcanvas-body .nav-link {
   color: var(--text);
