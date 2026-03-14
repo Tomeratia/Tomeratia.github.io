@@ -18,13 +18,16 @@
 // Typing effect בכותרת ה-Hero
 (function typingEffect() {
   const el = document.getElementById('typing-text');
+  const cursor = el?.nextElementSibling;
   if (!el) return;
   const text = 'Deep Learning | Computer Vision | Gen AI | NLP';
   let i = 0;
   function type() {
     if (i <= text.length) {
       el.textContent = text.slice(0, i++);
-      setTimeout(type, 70);
+      setTimeout(type, 45);
+    } else if (cursor) {
+      cursor.style.display = 'none';
     }
   }
   window.addEventListener('load', type);
@@ -73,7 +76,7 @@
         const current = fullText.slice(0, i++);
         const html = current.replace(boldWord, `<strong class="text-dark">${boldWord}</strong>`);
         el.innerHTML = html.replace(/\n/g, '<br>') + (i <= fullText.length ? '<span class="typing-cursor">|</span>' : '');
-        setTimeout(type, 22);
+        setTimeout(type, 12);
       }
     }
     type();
