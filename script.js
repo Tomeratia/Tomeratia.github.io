@@ -15,6 +15,30 @@
   });
 })();
 
+// Dark mode toggle
+(function darkMode() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const icon = btn.querySelector('i');
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    icon.className = 'bi bi-moon-fill';
+  }
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      icon.className = 'bi bi-sun-fill';
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      icon.className = 'bi bi-moon-fill';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+})();
+
 // Typing effect בכותרת ה-Hero
 (function typingEffect() {
   const el = document.getElementById('typing-text');
