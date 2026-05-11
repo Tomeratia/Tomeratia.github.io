@@ -86,7 +86,9 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 180px 0 60px;
+      padding: 100px 0 60px;
+      position: relative;
+      overflow: hidden;
     }
     .hero-inner {
       width: 100%;
@@ -97,6 +99,8 @@
       grid-template-columns: 1fr auto;
       gap: 64px;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
     .hero-eyebrow {
       font-family: var(--mono);
